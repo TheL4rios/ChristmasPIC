@@ -1,4 +1,4 @@
-MPASM 5.86                          MAIN.ASM   12-27-2020  18:28:15         PAGE  1
+MPASM 5.86                          MAIN.ASM   12-27-2020  22:02:26         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -40,65 +40,109 @@ Warning[207]: Found label after column 1. (START)
 0008                  00020     START
 0008   1805           00021         BTFSC PORTA, 0
 0009   2???           00022             GOTO FIRST_ANIMATION
-                      00023         ;BTFSC PORTA, 1
-                      00024             ;GOTO FIRST_ANIMATION
+000A   1885           00023         BTFSC PORTA, 1
+000B   2???           00024             GOTO SECOND_ANIMATION
                       00025         ;BTFSC PORTA, 2
                       00026             ;GOTO FIRST_ANIMATION
                       00027         ;BTFSC PORTA, 3
                       00028             ;GOTO FIRST_ANIMATION
-000A   2???           00029         GOTO START
+000C   2???           00029         GOTO START
                       00030             
 Warning[207]: Found label after column 1. (FIRST_ANIMATION)
-000B                  00031     FIRST_ANIMATION
-Message[305]: Using default destination of 1 (file).
-000B   0986           00032         COMF PORTB
-000C   2???           00033         CALL DELAY_1
-000D   2???           00034         GOTO START
-                      00035     
-Warning[207]: Found label after column 1. (DELAY_1)
-000E                  00036     DELAY_1 ; 0.2 seconds
-MPASM 5.86                          MAIN.ASM   12-27-2020  18:28:15         PAGE  2
+000D                  00031     FIRST_ANIMATION
+000D   2???           00032         CALL DELAY_2
+000E   30FF           00033         MOVLW b'11111111'
+000F   0086           00034         MOVWF PORTB
+0010   2???           00035         CALL DELAY_2
+0011   0186           00036         CLRF PORTB
+0012   2???           00037         GOTO START
+                      00038         
+MPASM 5.86                          MAIN.ASM   12-27-2020  22:02:26         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-000E   303F           00037         MOVLW   0x3F
-000F   00A0           00038         MOVWF   d1
-0010   309D           00039         MOVLW   0x9D
-0011   00A1           00040         MOVWF   d2
-0012   2???           00041         CALL DELAY
-0013   0008           00042         RETURN
-                      00043         
+Warning[207]: Found label after column 1. (SECOND_ANIMATION)
+0013                  00039     SECOND_ANIMATION
+0013   3080           00040         MOVLW b'10000000'
+0014   0086           00041         MOVWF PORTB
+0015   2???           00042         GOTO BUCLE_INC_SECOND_ANIMATION
+                      00043     
+Warning[207]: Found label after column 1. (BUCLE_INC_SECOND_ANIMATION)
+0016                  00044     BUCLE_INC_SECOND_ANIMATION
+0016   1806           00045         BTFSC PORTB, 0
+0017   2???           00046             GOTO BUCLE_DEC_SECOND_ANIMATION
+0018   0C86           00047         RRF PORTB, 1
+0019   2???           00048         CALL DELAY_3
+001A   2???           00049         GOTO BUCLE_INC_SECOND_ANIMATION
+                      00050         
+Warning[207]: Found label after column 1. (BUCLE_DEC_SECOND_ANIMATION)
+001B                  00051     BUCLE_DEC_SECOND_ANIMATION
+001B   1B86           00052         BTFSC PORTB, 7
+001C   2???           00053             GOTO START
+001D   0D86           00054         RLF PORTB, 1
+001E   2???           00055         CALL DELAY_3
+001F   2???           00056         GOTO BUCLE_DEC_SECOND_ANIMATION
+                      00057         
+                      00058     ; -------------------------------------------------------------------------
+                      00059         
+Warning[207]: Found label after column 1. (DELAY_1)
+0020                  00060     DELAY_1 ; 0.2 seconds
+0020   303F           00061         MOVLW   0x3F
+0021   00A0           00062         MOVWF   d1
+0022   309D           00063         MOVLW   0x9D
+0023   00A1           00064         MOVWF   d2
+0024   2???           00065         CALL DELAY
+0025   0008           00066         RETURN
+                      00067         
 Warning[207]: Found label after column 1. (DELAY_2)
-0014                  00044     DELAY_2 ; 0.1 seconds
-0014   301F           00045         MOVLW   0x1F
-0015   00A0           00046         MOVWF   d1
-0016   304F           00047         MOVLW   0x4F
-0017   00A1           00048         MOVWF   d2
-0018   2???           00049         CALL DELAY
-0019   0008           00050         RETURN
-                      00051         
+0026                  00068     DELAY_2 ; 0.1 seconds
+0026   301F           00069         MOVLW   0x1F
+0027   00A0           00070         MOVWF   d1
+0028   304F           00071         MOVLW   0x4F
+0029   00A1           00072         MOVWF   d2
+002A   2???           00073         CALL DELAY
+002B   0008           00074         RETURN
+                      00075         
+Warning[207]: Found label after column 1. (DELAY_3)
+002C                  00076     DELAY_3 ; 0.01 seconds
+002C   30CF           00077         MOVLW   0xCF
+002D   00A0           00078         MOVWF   d1
+002E   3008           00079         MOVLW   0x08
+002F   00A1           00080         MOVWF   d2
+0030   2???           00081         CALL DELAY
+0031   0008           00082         RETURN
+                      00083     
 Warning[207]: Found label after column 1. (DELAY)
-001A                  00052     DELAY
-001A   0BA0           00053         DECFSZ  d1, F
-001B   2???           00054         GOTO    $+2
-001C   0BA1           00055         DECFSZ  d2, F
-001D   2???           00056         GOTO    DELAY
-001E   0008           00057         RETURN
-                      00058 
-3FF9                  00059     END
-MPASM 5.86                          MAIN.ASM   12-27-2020  18:28:15         PAGE  3
+0032                  00084     DELAY
+MPASM 5.86                          MAIN.ASM   12-27-2020  22:02:26         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0032   0BA0           00085         DECFSZ  d1, F
+0033   2???           00086         GOTO    $+2
+0034   0BA1           00087         DECFSZ  d2, F
+0035   2???           00088         GOTO    DELAY
+0036   0008           00089         RETURN
+                      00090 
+3FF9                  00091     END
+MPASM 5.86                          MAIN.ASM   12-27-2020  22:02:26         PAGE  4
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+BUCLE_DEC_SECOND_ANIMATION        0000001B
+BUCLE_INC_SECOND_ANIMATION        00000016
 C                                 00000000
 DC                                00000001
-DELAY                             0000001A
-DELAY_1                           0000000E
-DELAY_2                           00000014
+DELAY                             00000032
+DELAY_1                           00000020
+DELAY_2                           00000026
+DELAY_3                           0000002C
 EEADR                             00000009
 EECON1                            00000088
 EECON2                            00000089
@@ -106,7 +150,7 @@ EEDATA                            00000008
 EEIE                              00000006
 EEIF                              00000004
 F                                 00000001
-FIRST_ANIMATION                   0000000B
+FIRST_ANIMATION                   0000000D
 FSR                               00000004
 GIE                               00000007
 INDF                              00000000
@@ -144,15 +188,16 @@ RBIE                              00000003
 RBIF                              00000000
 RD                                00000000
 RP0                               00000005
-RP1                               00000006
-SET_SETTINGS                      00000000
-START                             00000008
-MPASM 5.86                          MAIN.ASM   12-27-2020  18:28:15         PAGE  4
+MPASM 5.86                          MAIN.ASM   12-27-2020  22:02:26         PAGE  5
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+RP1                               00000006
+SECOND_ANIMATION                  00000013
+SET_SETTINGS                      00000000
+START                             00000008
 STATUS                            00000003
 T0CS                              00000005
 T0IE                              00000005
@@ -181,7 +226,7 @@ WR                                00000001
 WREN                              00000002
 WRERR                             00000003
 Z                                 00000002
-_.org_0_001B                      0000001B
+_.org_0_0033                      00000033
 _CONFIG                           00002007
 _CP_OFF                           00003FFF
 _CP_ON                            0000000F
@@ -202,20 +247,20 @@ _RC_OSC                           00003FFF
 _WDTE_OFF                         00003FFB
 _WDTE_ON                          00003FFF
 _WDT_OFF                          00003FFB
-_WDT_ON                           00003FFF
-_XT_OSC                           00003FFD
-__16F84A                          00000001
-d1                                00000020
-MPASM 5.86                          MAIN.ASM   12-27-2020  18:28:15         PAGE  5
+MPASM 5.86                          MAIN.ASM   12-27-2020  22:02:26         PAGE  6
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+d1                                00000020
 d2                                00000021
 
 Errors   :     0
-Warnings :     8 reported,     0 suppressed
-Messages :     1 reported,     0 suppressed
+Warnings :    12 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
 
 
