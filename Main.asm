@@ -24,8 +24,10 @@ ORG 0x00
 	    GOTO SECOND_ANIMATION
 	BTFSC PORTA, 2
 	    GOTO THIRD_ANIMATION
-	;BTFSC PORTA, 3
-	    ;GOTO FIRST_ANIMATION
+	BTFSC PORTA, 3
+	    GOTO FOURTH_ANIMATION
+	BTFSC PORTA, 4
+	    GOTO FIFTH_ANIMATION
 	GOTO START
 	    
     ; -------------------------------------------------------------------------
@@ -69,6 +71,47 @@ ORG 0x00
 	SWAPF PORTB, 1
 	GOTO START
     
+    ; -------------------------------------------------------------------------
+    
+    FOURTH_ANIMATION
+	CALL DELAY_3
+	MOVLW b'10000001'
+	MOVWF PORTB
+	CALL DELAY_2
+	MOVLW b'01000010'
+	MOVWF PORTB
+	CALL DELAY_2
+	MOVLW b'00100100'
+	MOVWF PORTB
+	CALL DELAY_2
+	MOVLW b'00011000'
+	MOVWF PORTB
+	CALL DELAY_2
+	MOVLW b'00100100'
+	MOVWF PORTB
+	CALL DELAY_2
+	MOVLW b'01000010'
+	MOVWF PORTB
+	CALL DELAY_2
+	MOVLW b'10000001'
+	MOVWF PORTB
+	GOTO START
+	
+    ; -------------------------------------------------------------------------
+    
+    FIFTH_ANIMATION
+	MOVLW b'10000000'
+	MOVWF PORTB
+	GOTO BUCLE_FIFTH_ANIMATION
+	
+    BUCLE_FIFTH_ANIMATION
+	CALL DELAY_3
+	RRF PORTB, 1
+	CALL DELAY_3
+	BTFSS PORTB, 7
+	    GOTO BUCLE_FIFTH_ANIMATION
+	GOTO START
+	
     ; -------------------------------------------------------------------------
 	
     DELAY_1 ; 0.2 seconds

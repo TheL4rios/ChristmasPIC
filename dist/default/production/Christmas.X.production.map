@@ -1,11 +1,11 @@
 MPLINK 5.09, LINKER
-Linker Map File - Created Mon Dec 28 12:33:39 2020
+Linker Map File - Created Wed Dec 30 12:22:49 2020
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
                 ---------  ---------  ---------  ---------  ---------
-                   .org_0       code   0x000000    program   0x00007e
-                   .cinit    romdata   0x00003f    program   0x000004
+                   .org_0       code   0x000000    program   0x0000c4
+                   .cinit    romdata   0x000062    program   0x000004
 .config_2007_BUILD/DEFAULT/PRODUCTION/MAIN.O       code   0x002007    program   0x000002
 
 
@@ -13,27 +13,30 @@ Linker Map File - Created Mon Dec 28 12:33:39 2020
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000040      
+                            0x000000    0x000063      
                             0x002007    0x002007      
-            66 out of 1094 program addresses used, program memory utilization is 6%
+            101 out of 1094 program addresses used, program memory utilization is 9%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-BUCLE_DEC_SECOND_ANIMATION   0x00001d    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-BUCLE_INC_SECOND_ANIMATION   0x000018    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-                    DELAY   0x00003a    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-                  DELAY_1   0x000028    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-                  DELAY_2   0x00002e    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-                  DELAY_3   0x000034    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-          FIRST_ANIMATION   0x00000f    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-         SECOND_ANIMATION   0x000015    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+BUCLE_DEC_SECOND_ANIMATION   0x000021    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+    BUCLE_FIFTH_ANIMATION   0x000045    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+BUCLE_INC_SECOND_ANIMATION   0x00001c    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+                    DELAY   0x00005d    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+                  DELAY_1   0x00004b    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+                  DELAY_2   0x000051    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+                  DELAY_3   0x000057    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+          FIFTH_ANIMATION   0x000042    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+          FIRST_ANIMATION   0x000013    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+         FOURTH_ANIMATION   0x00002c    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+         SECOND_ANIMATION   0x000019    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
              SET_SETTINGS   0x000000    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
                     START   0x000008    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-          THIRD_ANIMATION   0x000022    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-             _.org_0_003B   0x00003b    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+          THIRD_ANIMATION   0x000026    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+             _.org_0_005E   0x00005e    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
 
 
 
@@ -42,15 +45,18 @@ BUCLE_INC_SECOND_ANIMATION   0x000018    program     static C:\Users\Larios\Desk
                 ---------  ---------  ---------  --------- ---------                
              SET_SETTINGS   0x000000    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
                     START   0x000008    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-          FIRST_ANIMATION   0x00000f    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-         SECOND_ANIMATION   0x000015    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-BUCLE_INC_SECOND_ANIMATION   0x000018    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-BUCLE_DEC_SECOND_ANIMATION   0x00001d    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-          THIRD_ANIMATION   0x000022    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-                  DELAY_1   0x000028    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-                  DELAY_2   0x00002e    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-                  DELAY_3   0x000034    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-                    DELAY   0x00003a    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
-             _.org_0_003B   0x00003b    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+          FIRST_ANIMATION   0x000013    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+         SECOND_ANIMATION   0x000019    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+BUCLE_INC_SECOND_ANIMATION   0x00001c    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+BUCLE_DEC_SECOND_ANIMATION   0x000021    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+          THIRD_ANIMATION   0x000026    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+         FOURTH_ANIMATION   0x00002c    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+          FIFTH_ANIMATION   0x000042    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+    BUCLE_FIFTH_ANIMATION   0x000045    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+                  DELAY_1   0x00004b    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+                  DELAY_2   0x000051    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+                  DELAY_3   0x000057    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+                    DELAY   0x00005d    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
+             _.org_0_005E   0x00005e    program     static C:\Users\Larios\Desktop\Escuela\SP\U4\Programas\Christmas.X\Main.asm
 
 
